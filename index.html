@@ -43,7 +43,7 @@
   <div class="wrap">
     <header>
       <h1>桃園南崁生日行程（100 方案可選）｜給邱小芳</h1>
-      <div class="sub">版本：v2.9｜100 套不重複。每套展開後都有：時間表（含 16:50/18:00 接送）+ 店家連結 + 簡介。晚餐固定排在接送後面，並同時包含「台茂/南崁晚餐」與「八德就近晚餐」版本。另：已針對 iPhone Chrome/Telegram 修正「連結點不開」：點到連結會強制直接導向。</div>
+      <div class="sub">版本：v3.0｜100 套不重複。每套展開後都有：時間表（含 16:50/18:00 接送）+ 店家連結 + 簡介。晚餐固定排在接送後面，並同時包含「台茂/南崁晚餐」與「八德就近晚餐」版本。另：iPhone Chrome 若仍點不開連結，已改成每個 Google Maps 連結都內建 onclick 強制跳轉（最硬解）。</div>
       <div class="pillrow">
         <div class="pill">每方案只留：午餐 <b>或</b> 下午茶（二選一）</div>
         <div class="pill">晚餐：18:40–20:10（接送後）</div>
@@ -155,7 +155,7 @@
       return `
         <div class="place">
           <div class="name">${escapeHtml(title)}｜${escapeHtml(p.name)}</div>
-          <div class="meta">${escapeHtml(p.desc)}｜<a href="${p.link}" rel="noreferrer">Google Maps</a></div>
+          <div class="meta">${escapeHtml(p.desc)}｜<a href="${p.link}" rel="noreferrer" onclick="window.location.href=this.href; return false;">Google Maps</a></div>
         </div>`;
     }
 
@@ -262,7 +262,7 @@
       if(seen.has(p.key)) return false;
       seen.add(p.key);
       return true;
-    }).map(p => `<li>${escapeHtml(p.name)}：<a rel="noreferrer" href="${p.link}">Google Maps</a></li>`).join('');
+    }).map(p => `<li>${escapeHtml(p.name)}：<a rel="noreferrer" href="${p.link}" onclick="window.location.href=this.href; return false;">Google Maps</a></li>`).join('');
   </script>
 </body>
 </html>
