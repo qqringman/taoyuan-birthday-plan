@@ -43,7 +43,7 @@
   <div class="wrap">
     <header>
       <h1>桃園南崁生日行程（100 方案可選）｜給邱小芳</h1>
-      <div class="sub">版本：v2.8｜100 套不重複。每套展開後都有：時間表（含 16:50/18:00 接送）+ 店家連結 + 簡介。晚餐固定排在接送後面，並同時包含「台茂/南崁晚餐」與「八德就近晚餐」版本。另：已修正 Telegram/手機點連結常見打不開問題（不再使用 target=_blank，並避免 <details> 吃掉點擊）。</div>
+      <div class="sub">版本：v2.9｜100 套不重複。每套展開後都有：時間表（含 16:50/18:00 接送）+ 店家連結 + 簡介。晚餐固定排在接送後面，並同時包含「台茂/南崁晚餐」與「八德就近晚餐」版本。另：已針對 iPhone Chrome/Telegram 修正「連結點不開」：點到連結會強制直接導向。</div>
       <div class="pillrow">
         <div class="pill">每方案只留：午餐 <b>或</b> 下午茶（二選一）</div>
         <div class="pill">晚餐：18:40–20:10（接送後）</div>
@@ -87,12 +87,16 @@
   </div>
 
   <script>
-    // Telegram/手機 WebView 有時會擋 target=_blank 或把 <details> 點擊吃掉；
-    // 這裡確保點到連結就直接導向。
+    // iOS Chrome/Telegram WebView 有時會讓 <details>/<summary> 吃掉點擊，導致連結看起來「點不開」。
+    // 這裡強制：點到 <a> 一律直接導向該網址。
     document.addEventListener('click', (e) => {
       const a = e.target.closest && e.target.closest('a');
       if (!a) return;
+      const href = a.getAttribute('href');
+      if (!href || href.startsWith('#')) return;
+      e.preventDefault();
       e.stopPropagation();
+      window.location.href = href;
     }, true);
 
     // ---- Restaurant pools (manually curated; links are safe map-search links) ----
