@@ -35,149 +35,175 @@
     .place{padding:12px;border:1px solid var(--line);border-radius:14px;background:rgba(0,0,0,.16);margin-top:10px}
     .place .name{font-weight:900}
     .place .meta{color:var(--muted);font-size:13px;margin-top:4px}
+    code{color:var(--accent2)}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <h1>桃園南崁生日行程（20 方案可選）｜給邱小芳</h1>
-      <div class="sub">版本：v2.2｜依你最新要求：<b>每個方案只留「午餐 or 下午茶」其中一個</b>（不再兩個都排），再加上晚餐慶生；共 20 套你直接選。</div>
+      <div class="sub">版本：v2.3｜依你要求：<b>每個方案展開後都有完整時間規劃</b>；且「午餐 / 下午茶（插蠟燭）」是哪一間都附 <b>連結 + 簡介</b>。每方案只留「午餐 or 下午茶」其中一個，再加晚餐慶生。</div>
       <div class="pillrow">
-        <div class="pill">全部只放南崁/台茂</div>
+        <div class="pill">全部只放南崁/台茂吃喝</div>
         <div class="pill">每方案都寫死吃哪家</div>
-        <div class="pill">雞爪：一律外帶（台茂或南崁夜市看到就買）</div>
+        <div class="pill">雞爪：一律外帶（台茂/南崁夜市看到就買）</div>
       </div>
     </header>
 
     <section class="card">
-      <h2>共用時間骨架</h2>
-      <ul class="timeline">
-        <li class="item"><div><span class="time">12:10</span> 接到芳芳 <span class="tag ok">開始</span></div></li>
-        <li class="item"><div><span class="time">（二選一）</span> 午餐 <b>或</b> 下午茶（插蠟燭）</div><div class="desc">你要求只留一個：每個方案我都已經固定選好了。</div></li>
-        <li class="item"><div><span class="time">19:00–20:30</span> 晚餐（正式慶生）</div></li>
-        <li class="item"><div><span class="time">20:30±</span> 回家/住宿處：加熱蛋糕收尾</div></li>
-      </ul>
-      <div class="note" style="margin-top:10px">你回我「方案編號 #1～#20」，我就把那一套置頂並標成唯一主推。</div>
+      <h2>使用方式</h2>
+      <div class="note">你只要選一個方案編號（<code>#1</code>～<code>#20</code>）。每個方案展開後就是「照表操課」。</div>
     </section>
 
-    <section class="card">
-      <h2>20 個方案（每套只留 1 餐 + 晚餐）</h2>
-
+    <section class="card" id="plans">
+      <h2>20 個方案</h2>
       <div class="grid">
         <div>
           <h3>午餐派（只有午餐 + 晚餐）</h3>
-
-          <details open>
-            <summary>#1 午餐：南崁廚房｜晚餐：老乾杯（台茂）</summary>
-            <div class="pick">穩、好聊、有慶生感。</div>
-          </details>
-          <details>
-            <summary>#2 午餐：南崁廚房｜晚餐：阪前鐵板燒（台茂）</summary>
-            <div class="pick">儀式感最強（主廚現做）。</div>
-          </details>
-          <details>
-            <summary>#3 午餐：派大鮮精緻鍋物｜晚餐：老乾杯（台茂）</summary>
-            <div class="pick">中午吃鍋物舒服，晚上走高檔燒肉。</div>
-          </details>
-          <details>
-            <summary>#4 午餐：派大鮮精緻鍋物｜晚餐：島語（台茂）</summary>
-            <div class="pick">晚上自助選擇多，臨時改口味也不痛。</div>
-          </details>
-          <details>
-            <summary>#5 午餐：韓大叔（南崁）｜晚餐：老乾杯（台茂）</summary>
-            <div class="pick">中午熱鬧開胃，晚上質感收尾。</div>
-          </details>
-          <details>
-            <summary>#6 午餐：山奧屋無煙燒肉（南崁）｜晚餐：海底撈（台茂）</summary>
-            <div class="pick">燒肉 + 火鍋，完全不怕有人不吃牛。</div>
-          </details>
-          <details>
-            <summary>#7 午餐：有間客棧人文茶館｜晚餐：阪前鐵板燒（台茂）</summary>
-            <div class="pick">中午聊天型（像包廂），晚上走儀式感。</div>
-          </details>
-          <details>
-            <summary>#8 午餐：力鍛金家傳眷村味｜晚餐：原燒（台茂）</summary>
-            <div class="pick">中午牛肉麵系很穩，晚上燒肉慶生不尷尬。</div>
-          </details>
-          <details>
-            <summary>#9 午餐：一燒十味昭和園｜晚餐：島語（台茂）</summary>
-            <div class="pick">燒肉控的一天：中午先燒肉，晚上自助放鬆。</div>
-          </details>
-          <details>
-            <summary>#10 午餐：我家牛排（南崁）｜晚餐：海底撈（台茂）</summary>
-            <div class="pick">超 CP 值、完全不怕吃不飽。</div>
-          </details>
+          <div id="colLunch"></div>
         </div>
-
         <div>
           <h3>下午茶派（只有下午茶 + 晚餐）</h3>
-
-          <details open>
-            <summary>#11 下午茶：閾島（插蠟燭）｜晚餐：老乾杯（台茂）</summary>
-            <div class="pick">甜點主慶生 + 晚上高檔收尾（最像生日劇本）。</div>
-          </details>
-          <details>
-            <summary>#12 下午茶：閾島（插蠟燭）｜晚餐：阪前鐵板燒（台茂）</summary>
-            <div class="pick">一整天都很有儀式感。</div>
-          </details>
-          <details>
-            <summary>#13 下午茶：閾島（插蠟燭）｜晚餐：島語（台茂）</summary>
-            <div class="pick">甜點拍照後，晚上吃到飽最輕鬆。</div>
-          </details>
-          <details>
-            <summary>#14 下午茶：閾島（插蠟燭）｜晚餐：海底撈（台茂）</summary>
-            <div class="pick">服務型晚餐，不用一直顧氣氛。</div>
-          </details>
-          <details>
-            <summary>#15 下午茶：一克拉的甜點｜晚餐：老乾杯（台茂）</summary>
-            <div class="pick">好拍甜點 + 高檔晚餐。</div>
-          </details>
-          <details>
-            <summary>#16 下午茶：一克拉的甜點｜晚餐：原燒（台茂）</summary>
-            <div class="pick">甜點後接燒肉，整套很安全。</div>
-          </details>
-          <details>
-            <summary>#17 下午茶：一克拉的甜點｜晚餐：海底撈（台茂）</summary>
-            <div class="pick">甜點完走火鍋，不怕有人挑食。</div>
-          </details>
-          <details>
-            <summary>#18 下午茶：閾島（插蠟燭）｜晚餐：大明星頂流涮涮鍋</summary>
-            <div class="pick">想要「高級感」但又想吃火鍋，這套最對味（建議先訂）。</div>
-          </details>
-          <details>
-            <summary>#19 下午茶：閾島（插蠟燭）｜晚餐：韓大叔（南崁）</summary>
-            <div class="pick">甜點當主場，晚餐走熱鬧開心路線。</div>
-          </details>
-          <details>
-            <summary>#20 下午茶：閾島（插蠟燭）｜晚餐：山奧屋無煙燒肉（南崁）</summary>
-            <div class="pick">甜點拍照後，晚餐走低調質感燒肉。</div>
-          </details>
+          <div id="colTea"></div>
         </div>
       </div>
-
-      <hr />
-      <div class="note">如果你不想選：我會直接用 <b>#11</b> 當主方案（甜點主慶生 + 老乾杯最穩）。</div>
     </section>
 
     <section class="card">
-      <h2>地圖（你真的需要時再點）</h2>
-      <div class="place"><div class="name">南崁廚房</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E5%B4%81%E5%BB%9A%E6%88%BF+%E6%A1%83%E5%9C%92+%E5%BF%A0%E5%AD%9D%E6%9D%B1%E8%B7%AF30%E8%99%9F">Google Maps</a></div></div>
-      <div class="place"><div class="name">派大鮮精緻鍋物</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E6%B4%BE%E5%A4%A7%E9%AE%AE%E7%B2%BE%E7%B7%BB%E9%8D%8B%E7%89%A9+%E7%B6%93%E5%9C%8B%E8%B7%AF681%E8%99%9F">Google Maps</a></div></div>
-      <div class="place"><div class="name">閾島 Liminal Space</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E9%96%BE%E5%B3%B6+Liminal+Space+%E5%85%89%E6%98%8E%E8%B7%AF%E4%B8%80%E6%AE%B56%E8%99%9F">Google Maps</a></div></div>
-      <div class="place"><div class="name">一克拉的甜點</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E5%85%8B%E6%8B%89%E7%9A%84%E7%94%9C%E9%BB%9E+%E4%B8%AD%E5%B1%B1%E8%B7%AF43%E5%B7%B710%E8%99%9F">Google Maps</a></div></div>
-      <div class="place"><div class="name">老乾杯（台茂）</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E8%80%81%E4%B9%BE%E6%9D%AF+%E5%8F%B0%E8%8C%82">Google Maps</a></div></div>
-      <div class="place"><div class="name">阪前鐵板燒（台茂）</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E9%98%AA%E5%89%8D%E9%90%B5%E6%9D%BF%E7%87%92+%E5%8F%B0%E8%8C%82">Google Maps</a></div></div>
-      <div class="place"><div class="name">島語（台茂）</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%B3%B6%E8%AA%9E+%E5%8F%B0%E8%8C%82">Google Maps</a></div></div>
-      <div class="place"><div class="name">海底撈（台茂）</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E6%B5%B7%E5%BA%95%E6%92%88+%E5%8F%B0%E8%8C%82">Google Maps</a></div></div>
-      <div class="place"><div class="name">原燒（台茂）</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%8E%9F%E7%87%92+%E5%8F%B0%E8%8C%82">Google Maps</a></div></div>
-      <div class="place"><div class="name">大明星頂流涮涮鍋</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%A4%A7%E6%98%8E%E6%98%9F%E9%A0%82%E6%B5%81%E6%B6%AE%E6%B6%AE%E9%8D%8B+%E5%8D%97%E5%B4%81">Google Maps</a></div></div>
-      <div class="place"><div class="name">韓大叔正宗韓式烤肉</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E9%9F%93%E5%A4%A7%E5%8F%94+%E5%8D%97%E5%B4%81%E8%B7%AF%E4%B8%80%E6%AE%B58%E8%99%9F">Google Maps</a></div></div>
-      <div class="place"><div class="name">山奧屋無煙燒肉</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%B1%B1%E5%A5%A7%E5%B1%8B+%E5%8D%97%E5%B4%81">Google Maps</a></div></div>
-      <div class="place"><div class="name">一燒十味昭和園</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E4%B8%80%E7%87%92%E5%8D%81%E5%91%B3%E6%98%AD%E5%92%8C%E5%9C%92+%E8%98%86%E7%AB%B9">Google Maps</a></div></div>
-      <div class="place"><div class="name">我家牛排（南崁）</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E6%88%91%E5%AE%B6%E7%89%9B%E6%8E%92+%E5%8D%97%E5%B4%81">Google Maps</a></div></div>
-      <div class="place"><div class="name">有間客棧人文茶館</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E6%9C%89%E9%96%93%E5%AE%A2%E6%A3%A7+%E4%BB%81%E6%84%9B%E8%B7%AF%E4%B8%80%E6%AE%B5">Google Maps</a></div></div>
-      <div class="place"><div class="name">力鍛金家傳眷村味</div><div class="meta"><a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%8A%9B%E9%8D%9B%E9%87%91+%E8%98%86%E7%AB%B9">Google Maps</a></div></div>
+      <h2>地圖（需要時再點）</h2>
+      <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+        <li>南崁廚房：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E5%B4%81%E5%BB%9A%E6%88%BF+%E6%A1%83%E5%9C%92+%E5%BF%A0%E5%AD%9D%E6%9D%B1%E8%B7%AF30%E8%99%9F">Google Maps</a></li>
+        <li>派大鮮精緻鍋物：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E6%B4%BE%E5%A4%A7%E9%AE%AE%E7%B2%BE%E7%B7%BB%E9%8D%8B%E7%89%A9+%E7%B6%93%E5%9C%8B%E8%B7%AF681%E8%99%9F">Google Maps</a></li>
+        <li>閾島 Liminal Space：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E9%96%BE%E5%B3%B6+Liminal+Space+%E5%85%89%E6%98%8E%E8%B7%AF%E4%B8%80%E6%AE%B56%E8%99%9F">Google Maps</a></li>
+        <li>一克拉的甜點：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E5%85%8B%E6%8B%89%E7%9A%84%E7%94%9C%E9%BB%9E+%E4%B8%AD%E5%B1%B1%E8%B7%AF43%E5%B7%B710%E8%99%9F">Google Maps</a></li>
+        <li>老乾杯（台茂）：<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E8%80%81%E4%B9%BE%E6%9D%AF+%E5%8F%B0%E8%8C%82">Google Maps</a></li>
+        <li>阪前鐵板燒（台茂）：<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E9%98%AA%E5%89%8D%E9%90%B5%E6%9D%BF%E7%87%92+%E5%8F%B0%E8%8C%82">Google Maps</a></li>
+        <li>島語（台茂）：<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%B3%B6%E8%AA%9E+%E5%8F%B0%E8%8C%82">Google Maps</a></li>
+        <li>海底撈（台茂）：<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E6%B5%B7%E5%BA%95%E6%92%88+%E5%8F%B0%E8%8C%82">Google Maps</a></li>
+        <li>原燒（台茂）：<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%8E%9F%E7%87%92+%E5%8F%B0%E8%8C%82">Google Maps</a></li>
+        <li>大明星頂流涮涮鍋：<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%A4%A7%E6%98%8E%E6%98%9F%E9%A0%82%E6%B5%81%E6%B6%AE%E6%B6%AE%E9%8D%8B+%E5%8D%97%E5%B4%81">Google Maps</a></li>
+        <li>韓大叔：<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E9%9F%93%E5%A4%A7%E5%8F%94+%E5%8D%97%E5%B4%81%E8%B7%AF%E4%B8%80%E6%AE%B58%E8%99%9F">Google Maps</a></li>
+        <li>山奧屋：<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%B1%B1%E5%A5%A7%E5%B1%8B+%E5%8D%97%E5%B4%81">Google Maps</a></li>
+        <li>一燒十味昭和園：<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E4%B8%80%E7%87%92%E5%8D%81%E5%91%B3%E6%98%AD%E5%92%8C%E5%9C%92+%E8%98%86%E7%AB%B9">Google Maps</a></li>
+        <li>我家牛排：<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E6%88%91%E5%AE%B6%E7%89%9B%E6%8E%92+%E5%8D%97%E5%B4%81">Google Maps</a></li>
+        <li>有間客棧：<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E6%9C%89%E9%96%93%E5%AE%A2%E6%A3%A7+%E4%BB%81%E6%84%9B%E8%B7%AF%E4%B8%80%E6%AE%B5">Google Maps</a></li>
+        <li>力鍛金：<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%8A%9B%E9%8D%9B%E9%87%91+%E8%98%86%E7%AB%B9">Google Maps</a></li>
+      </ul>
     </section>
   </div>
+
+  <script>
+    const places = {
+      nankanKitchen: { name: '南崁廚房', link: 'https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E5%B4%81%E5%BB%9A%E6%88%BF+%E6%A1%83%E5%9C%92+%E5%BF%A0%E5%AD%9D%E6%9D%B1%E8%B7%AF30%E8%99%9F', desc: '家常/合菜，穩、好聊、對長輩也友善。' },
+      paiDaXian: { name: '派大鮮精緻鍋物', link: 'https://www.google.com/maps/search/?api=1&query=%E6%B4%BE%E5%A4%A7%E9%AE%AE%E7%B2%BE%E7%B7%BB%E9%8D%8B%E7%89%A9+%E7%B6%93%E5%9C%8B%E8%B7%AF681%E8%99%9F', desc: '鍋物/海鮮取向，吃得舒服、節奏好掌控。' },
+      hanDaShu: { name: '韓大叔正宗韓式烤肉', link: 'https://maps.google.com/?q=%E9%9F%93%E5%A4%A7%E5%8F%94+%E5%8D%97%E5%B4%81%E8%B7%AF%E4%B8%80%E6%AE%B58%E8%99%9F', desc: '氣氛熱鬧、開胃，適合想要更嗨的午餐。' },
+      yamaokuya: { name: '山奧屋無煙燒肉', link: 'https://maps.google.com/?q=%E5%B1%B1%E5%A5%A7%E5%B1%8B+%E5%8D%97%E5%B4%81', desc: '低調質感燒肉，無煙舒服，適合慢慢吃。' },
+      youJian: { name: '有間客棧人文茶館', link: 'https://maps.google.com/?q=%E6%9C%89%E9%96%93%E5%AE%A2%E6%A3%A7+%E4%BB%81%E6%84%9B%E8%B7%AF%E4%B8%80%E6%AE%B5', desc: '聊天型餐廳（像包廂），坐著談事情很舒服。' },
+      liDuanJin: { name: '力鍛金家傳眷村味', link: 'https://maps.google.com/?q=%E5%8A%9B%E9%8D%9B%E9%87%91+%E8%98%86%E7%AB%B9', desc: '眷村味/麵食系，很穩、不挑人。' },
+      shaoHeYuan: { name: '一燒十味昭和園', link: 'https://maps.google.com/?q=%E4%B8%80%E7%87%92%E5%8D%81%E5%91%B3%E6%98%AD%E5%92%8C%E5%9C%92+%E8%98%86%E7%AB%B9', desc: '燒肉聚餐感強，服務換網也比較勤。' },
+      woJia: { name: '我家牛排（南崁）', link: 'https://maps.google.com/?q=%E6%88%91%E5%AE%B6%E7%89%9B%E6%8E%92+%E5%8D%97%E5%B4%81', desc: 'CP 值路線，不怕吃不飽，氣氛輕鬆。' },
+
+      liminal: { name: '閾島 Liminal Space', link: 'https://www.google.com/maps/search/?api=1&query=%E9%96%BE%E5%B3%B6+Liminal+Space+%E5%85%89%E6%98%8E%E8%B7%AF%E4%B8%80%E6%AE%B56%E8%99%9F', desc: '甜點控主場：插蠟燭、拍照、坐著聊都很適合。' },
+      oneCarat: { name: '一克拉的甜點', link: 'https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E5%85%8B%E6%8B%89%E7%9A%84%E7%94%9C%E9%BB%9E+%E4%B8%AD%E5%B1%B1%E8%B7%AF43%E5%B7%B710%E8%99%9F', desc: '甜點好拍，適合把儀式感做滿。' },
+
+      laoGanBei: { name: '老乾杯（台茂）', link: 'https://maps.google.com/?q=%E8%80%81%E4%B9%BE%E6%9D%AF+%E5%8F%B0%E8%8C%82', desc: '高檔慶生首選：質感、服務、氣氛都像主場。' },
+      banQian: { name: '阪前鐵板燒（台茂）', link: 'https://maps.google.com/?q=%E9%98%AA%E5%89%8D%E9%90%B5%E6%9D%BF%E7%87%92+%E5%8F%B0%E8%8C%82', desc: '儀式感最強：主廚現做、節奏穩、很像慶生秀。' },
+      daoYu: { name: '島語（台茂）', link: 'https://maps.google.com/?q=%E5%B3%B6%E8%AA%9E+%E5%8F%B0%E8%8C%82', desc: '自助選擇多：多人聚餐、臨時改口味最安全。' },
+      haiDiLao: { name: '海底撈（台茂）', link: 'https://maps.google.com/?q=%E6%B5%B7%E5%BA%95%E6%92%88+%E5%8F%B0%E8%8C%82', desc: '服務型晚餐：不用一直顧氣氛，大家都舒服。' },
+      yuanShao: { name: '原燒（台茂）', link: 'https://maps.google.com/?q=%E5%8E%9F%E7%87%92+%E5%8F%B0%E8%8C%82', desc: '燒肉路線、相對好訂位，穩穩不踩雷。' },
+      daMingXing: { name: '大明星頂流涮涮鍋', link: 'https://maps.google.com/?q=%E5%A4%A7%E6%98%8E%E6%98%9F%E9%A0%82%E6%B5%81%E6%B6%AE%E6%B6%AE%E9%8D%8B+%E5%8D%97%E5%B4%81', desc: '想要高級感但又想吃火鍋，這家很對味（建議先訂）。' },
+    };
+
+    const plans = [
+      // Lunch only (#1-#10)
+      { id: 1, kind: 'lunch', meal: places.nankanKitchen, dinner: places.laoGanBei, why: '穩、好聊、有慶生感。' },
+      { id: 2, kind: 'lunch', meal: places.nankanKitchen, dinner: places.banQian, why: '儀式感最強（主廚現做）。' },
+      { id: 3, kind: 'lunch', meal: places.paiDaXian, dinner: places.laoGanBei, why: '中午舒服，晚上走高檔燒肉。' },
+      { id: 4, kind: 'lunch', meal: places.paiDaXian, dinner: places.daoYu, why: '晚上自助選擇多，臨時改口味也不痛。' },
+      { id: 5, kind: 'lunch', meal: places.hanDaShu, dinner: places.laoGanBei, why: '中午熱鬧開胃，晚上質感收尾。' },
+      { id: 6, kind: 'lunch', meal: places.yamaokuya, dinner: places.haiDiLao, why: '燒肉 + 火鍋，不怕有人不吃牛。' },
+      { id: 7, kind: 'lunch', meal: places.youJian, dinner: places.banQian, why: '中午聊天型，晚上走儀式感。' },
+      { id: 8, kind: 'lunch', meal: places.liDuanJin, dinner: places.yuanShao, why: '中午麵食穩，晚上燒肉不尷尬。' },
+      { id: 9, kind: 'lunch', meal: places.shaoHeYuan, dinner: places.daoYu, why: '燒肉控的一天：中午先燒肉，晚上自助放鬆。' },
+      { id: 10, kind: 'lunch', meal: places.woJia, dinner: places.haiDiLao, why: '超 CP 值，完全不怕吃不飽。' },
+
+      // Tea only (#11-#20)
+      { id: 11, kind: 'tea', meal: places.liminal, dinner: places.laoGanBei, why: '甜點主慶生 + 高檔晚餐（最像生日劇本）。' },
+      { id: 12, kind: 'tea', meal: places.liminal, dinner: places.banQian, why: '一整天都很有儀式感。' },
+      { id: 13, kind: 'tea', meal: places.liminal, dinner: places.daoYu, why: '甜點拍照後，晚上吃到飽最輕鬆。' },
+      { id: 14, kind: 'tea', meal: places.liminal, dinner: places.haiDiLao, why: '服務型晚餐，不用一直顧氣氛。' },
+      { id: 15, kind: 'tea', meal: places.oneCarat, dinner: places.laoGanBei, why: '好拍甜點 + 高檔晚餐。' },
+      { id: 16, kind: 'tea', meal: places.oneCarat, dinner: places.yuanShao, why: '甜點後接燒肉，整套很安全。' },
+      { id: 17, kind: 'tea', meal: places.oneCarat, dinner: places.haiDiLao, why: '甜點完走火鍋，不怕有人挑食。' },
+      { id: 18, kind: 'tea', meal: places.liminal, dinner: places.daMingXing, why: '高級火鍋路線：吃得舒服又有面子。' },
+      { id: 19, kind: 'tea', meal: places.liminal, dinner: places.hanDaShu, why: '甜點當主場，晚餐走熱鬧開心路線。' },
+      { id: 20, kind: 'tea', meal: places.liminal, dinner: places.yamaokuya, why: '甜點拍照後，晚餐走低調質感燒肉。' },
+    ];
+
+    function escapeHtml(s){
+      return String(s).replace(/[&<>\"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;','\'':'&#39;'}[c]));
+    }
+
+    function placeCard(title, p){
+      return `
+        <div class="place">
+          <div class="name">${escapeHtml(title)}｜${escapeHtml(p.name)}</div>
+          <div class="meta">${escapeHtml(p.desc)}｜<a href="${p.link}" target="_blank" rel="noreferrer">Google Maps</a></div>
+        </div>`;
+    }
+
+    function timelineForPlan(plan){
+      if(plan.kind === 'lunch'){
+        return `
+          <ul class="timeline">
+            <li class="item"><div><span class="time">12:10</span> 接到芳芳 <span class="tag ok">開始</span></div></li>
+            <li class="item"><div><span class="time">12:20–13:20</span> 午餐（本方案指定）</div><div class="desc">吃飽、把心情顧好，下午就不會亂。</div></li>
+            <li class="item"><div><span class="time">13:20–18:30</span> 其他固定事項 / 移動（本頁不展開）</div><div class="desc">你要求只留吃喝：中間事情照你原本安排走。</div></li>
+            <li class="item"><div><span class="time">19:00–20:30</span> 晚餐（正式慶生）</div><div class="desc">把重頭戲放這一餐：坐好坐滿。</div></li>
+            <li class="item"><div><span class="time">20:30±</span> 回家/住宿處：加熱蛋糕收尾</div></li>
+          </ul>`;
+      }
+      // tea
+      return `
+        <ul class="timeline">
+          <li class="item"><div><span class="time">12:10</span> 接到芳芳 <span class="tag ok">開始</span></div></li>
+          <li class="item"><div><span class="time">12:20–14:00</span> 午間自由（不指定餐廳）</div><div class="desc">本方案只留下午茶當主場；中午你們可隨便吃/便利商店也行。</div></li>
+          <li class="item"><div><span class="time">14:30–16:10</span> 下午茶（主慶生 / 插蠟燭）</div><div class="desc">甜點控主場：插蠟燭、拍照、慢慢聊。</div></li>
+          <li class="item"><div><span class="time">16:10–18:30</span> 其他固定事項 / 移動（本頁不展開）</div><div class="desc">你要求只留吃喝：中間事情照你原本安排走。</div></li>
+          <li class="item"><div><span class="time">19:00–20:30</span> 晚餐（正式慶生）</div></li>
+          <li class="item"><div><span class="time">20:30±</span> 回家/住宿處：加熱蛋糕收尾</div></li>
+        </ul>`;
+    }
+
+    function renderPlan(plan){
+      const mealLabel = plan.kind === 'lunch' ? '午餐' : '下午茶（插蠟燭）';
+      return `
+        <details>
+          <summary>#${plan.id} ${mealLabel}：${escapeHtml(plan.meal.name)}｜晚餐：${escapeHtml(plan.dinner.name)}</summary>
+          <div class="pick">推薦原因：${escapeHtml(plan.why)}</div>
+          ${timelineForPlan(plan)}
+          <hr />
+          <div class="note">本方案指定店家（含連結 + 簡介）</div>
+          ${placeCard(mealLabel, plan.meal)}
+          ${placeCard('晚餐（正式慶生）', plan.dinner)}
+        </details>`;
+    }
+
+    const colLunch = document.getElementById('colLunch');
+    const colTea = document.getElementById('colTea');
+
+    // default open #11 and #1 (first of each)
+    const lunchPlans = plans.filter(p => p.kind === 'lunch');
+    const teaPlans = plans.filter(p => p.kind === 'tea');
+
+    colLunch.innerHTML = lunchPlans.map(renderPlan).join('');
+    colTea.innerHTML = teaPlans.map(renderPlan).join('');
+
+    // Auto-open first plan in each column
+    for(const col of [colLunch, colTea]){
+      const first = col.querySelector('details');
+      if(first) first.setAttribute('open','');
+    }
+  </script>
 </body>
 </html>
