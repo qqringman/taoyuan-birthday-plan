@@ -43,7 +43,7 @@
   <div class="wrap">
     <header>
       <h1>桃園南崁生日行程（100 方案可選）｜給邱小芳</h1>
-      <div class="sub">版本：v2.7｜你嫌組合重複 → 我把方案改成「由餐廳池認真配對自動生成」，做到 <b>100 套不重複</b>。每套展開後都有：時間表（含 16:50/18:00 接送）+ 店家連結 + 簡介。晚餐固定排在接送後面，並同時包含「台茂/南崁晚餐」與「八德就近晚餐」版本。</div>
+      <div class="sub">版本：v2.8｜100 套不重複。每套展開後都有：時間表（含 16:50/18:00 接送）+ 店家連結 + 簡介。晚餐固定排在接送後面，並同時包含「台茂/南崁晚餐」與「八德就近晚餐」版本。另：已修正 Telegram/手機點連結常見打不開問題（不再使用 target=_blank，並避免 <details> 吃掉點擊）。</div>
       <div class="pillrow">
         <div class="pill">每方案只留：午餐 <b>或</b> 下午茶（二選一）</div>
         <div class="pill">晚餐：18:40–20:10（接送後）</div>
@@ -87,6 +87,14 @@
   </div>
 
   <script>
+    // Telegram/手機 WebView 有時會擋 target=_blank 或把 <details> 點擊吃掉；
+    // 這裡確保點到連結就直接導向。
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest && e.target.closest('a');
+      if (!a) return;
+      e.stopPropagation();
+    }, true);
+
     // ---- Restaurant pools (manually curated; links are safe map-search links) ----
     // Meal / Lunch (南崁/台茂周邊)
     const lunchMeals = [
@@ -143,7 +151,7 @@
       return `
         <div class="place">
           <div class="name">${escapeHtml(title)}｜${escapeHtml(p.name)}</div>
-          <div class="meta">${escapeHtml(p.desc)}｜<a href="${p.link}" target="_blank" rel="noreferrer">Google Maps</a></div>
+          <div class="meta">${escapeHtml(p.desc)}｜<a href="${p.link}" rel="noreferrer">Google Maps</a></div>
         </div>`;
     }
 
@@ -250,7 +258,7 @@
       if(seen.has(p.key)) return false;
       seen.add(p.key);
       return true;
-    }).map(p => `<li>${escapeHtml(p.name)}：<a target="_blank" rel="noreferrer" href="${p.link}">Google Maps</a></li>`).join('');
+    }).map(p => `<li>${escapeHtml(p.name)}：<a rel="noreferrer" href="${p.link}">Google Maps</a></li>`).join('');
   </script>
 </body>
 </html>
