@@ -42,7 +42,7 @@
   <div class="wrap">
     <header>
       <h1>桃園南崁生日行程（20 方案可選）｜給邱小芳</h1>
-      <div class="sub">版本：v2.5｜每個方案展開後都有：<b>完整時間表</b>（含 16:50/18:00 接送）+ <b>店家連結與簡介</b>。依你最新要求：<b>晚餐時間一定跟在接送後面</b>；且有幾套方案把晚餐安排在 <b>八德</b>（方便你接完就吃）。</div>
+      <div class="sub">版本：v2.6｜每個方案展開後都有：<b>完整時間表</b>（含 16:50/18:00 接送）+ <b>店家連結與簡介</b>。晚餐固定接送後開吃；並新增更多「不同餐廳組合」：總共 40 套方案可選（含台茂/南崁晚餐＋八德就近晚餐）。</div>
       <div class="pillrow">
         <div class="pill">每方案只留「午餐 or 下午茶」其中一個</div>
         <div class="pill">晚餐固定：接送後 18:40 左右開吃</div>
@@ -56,7 +56,7 @@
     </section>
 
     <section class="card" id="plans">
-      <h2>20 個方案</h2>
+      <h2>40 個方案</h2>
       <div class="grid">
         <div>
           <h3>午餐派（只有午餐 + 晚餐）</h3>
@@ -85,6 +85,12 @@
         <li>大明星頂流涮涮鍋：<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%A4%A7%E6%98%8E%E6%98%9F%E9%A0%82%E6%B5%81%E6%B6%AE%E6%B6%AE%E9%8D%8B+%E5%8D%97%E5%B4%81">Google Maps</a></li>
         <li>大荷餐廳（八德）：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E8%8D%B7%E9%A4%90%E5%BB%B3+%E5%85%AB%E5%BE%B7">Google Maps</a></li>
         <li>貝蛤蛤海鮮餐酒館（八德）：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E8%B2%9D%E8%9B%A4%E8%9B%A4+%E6%B5%B7%E9%AE%AE%E9%A4%90%E9%85%92%E9%A4%A8+%E5%85%AB%E5%BE%B7">Google Maps</a></li>
+        <li>莆田 PUTIEN（台茂）：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E8%8E%86%E7%94%B0+PUTIEN+%E5%8F%B0%E8%8C%82">Google Maps</a></li>
+        <li>漢來海港（台茂）：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E6%BC%A2%E4%BE%86%E6%B5%B7%E6%B8%AF+%E5%8F%B0%E8%8C%82">Google Maps</a></li>
+        <li>漢來蔬食（台茂）：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E6%BC%A2%E4%BE%86%E8%94%AC%E9%A3%9F+%E5%8F%B0%E8%8C%82">Google Maps</a></li>
+        <li>金色三麥（台茂）：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%89%B2%E4%B8%89%E9%BA%A5+%E5%8F%B0%E8%8C%82">Google Maps</a></li>
+        <li>燒桶子 韓食料理（八德）：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E7%87%92%E6%A1%B6%E5%AD%90+%E9%9F%93%E9%A3%9F%E6%96%99%E7%90%86+%E5%85%AB%E5%BE%B7">Google Maps</a></li>
+        <li>轉角17 義式餐廳（八德）：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E8%BD%89%E8%A7%9217+%E7%BE%A9%E5%BC%8F%E9%A4%90%E5%BB%B3+%E5%85%AB%E5%BE%B7">Google Maps</a></li>
       </ul>
     </section>
   </div>
@@ -113,9 +119,17 @@
       yuanShao: { name: '原燒（台茂）', link: 'https://maps.google.com/?q=%E5%8E%9F%E7%87%92+%E5%8F%B0%E8%8C%82', desc: '燒肉路線、相對好訂位，穩穩不踩雷。' },
       daMingXing: { name: '大明星頂流涮涮鍋', link: 'https://maps.google.com/?q=%E5%A4%A7%E6%98%8E%E6%98%9F%E9%A0%82%E6%B5%81%E6%B6%AE%E6%B6%AE%E9%8D%8B+%E5%8D%97%E5%B4%81', desc: '想要高級感但又想吃火鍋，這家很對味（建議先訂）。' },
 
+      // Dinner (Taimao - more variety)
+      putien: { name: '莆田 PUTIEN（台茂）', link: 'https://www.google.com/maps/search/?api=1&query=%E8%8E%86%E7%94%B0+PUTIEN+%E5%8F%B0%E8%8C%82', desc: '中式聚餐很強：多人也好點菜，整體穩、長輩友善。' },
+      hanlaiHarbour: { name: '漢來海港（台茂）', link: 'https://www.google.com/maps/search/?api=1&query=%E6%BC%A2%E4%BE%86%E6%B5%B7%E6%B8%AF+%E5%8F%B0%E8%8C%82', desc: '自助餐大場面：選擇超多、很適合「有人忌口」的局。' },
+      hanlaiVeggie: { name: '漢來蔬食（台茂）', link: 'https://www.google.com/maps/search/?api=1&query=%E6%BC%A2%E4%BE%86%E8%94%AC%E9%A3%9F+%E5%8F%B0%E8%8C%82', desc: '想吃清爽、又有質感：蔬食也能很像慶生餐。' },
+      jinseSanmai: { name: '金色三麥（台茂）', link: 'https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%89%B2%E4%B8%89%E9%BA%A5+%E5%8F%B0%E8%8C%82', desc: '氣氛熱鬧、很適合聊天；想要微醺慶生選這套。' },
+
       // Dinner (Bade options)
       daHeBade: { name: '大荷餐廳（八德）', link: 'https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E8%8D%B7%E9%A4%90%E5%BB%B3+%E5%85%AB%E5%BE%B7', desc: '中式家常/合菜取向，適合接送後直接坐下來吃。' },
       beiHaHaBade: { name: '貝蛤蛤海鮮餐酒館（八德）', link: 'https://www.google.com/maps/search/?api=1&query=%E8%B2%9D%E8%9B%A4%E8%9B%A4+%E6%B5%B7%E9%AE%AE%E9%A4%90%E9%85%92%E9%A4%A8+%E5%85%AB%E5%BE%B7', desc: '海鮮/熱炒/餐酒館氛圍，想要熱鬧可以選這套。' },
+      shaoTongZiBade: { name: '燒桶子 韓食料理（八德）', link: 'https://www.google.com/maps/search/?api=1&query=%E7%87%92%E6%A1%B6%E5%AD%90+%E9%9F%93%E9%A3%9F%E6%96%99%E7%90%86+%E5%85%AB%E5%BE%B7', desc: '韓式料理路線：口味重、氣氛嗨，接完就吃很爽快。' },
+      corner17Bade: { name: '轉角17 義式餐廳（八德）', link: 'https://www.google.com/maps/search/?api=1&query=%E8%BD%89%E8%A7%9217+%E7%BE%A9%E5%BC%8F%E9%A4%90%E5%BB%B3+%E5%85%AB%E5%BE%B7', desc: '義式聊天局：節奏舒服、好坐，適合慢慢吃。' },
     };
 
     const plans = [
@@ -142,6 +156,29 @@
       { id: 18, kind: 'tea', meal: places.liminal, dinner: places.daMingXing, why: '高級火鍋路線（晚餐南崁）。' },
       { id: 19, kind: 'tea', meal: places.liminal, dinner: places.daHeBade, why: '甜點當主場，晚餐改在八德（接完就吃）。' },
       { id: 20, kind: 'tea', meal: places.liminal, dinner: places.beiHaHaBade, why: '甜點當主場，晚餐八德熱鬧吃海鮮。' },
+
+      // More variety (#21-#40)
+      { id: 21, kind: 'lunch', meal: places.nankanKitchen, dinner: places.putien, why: '中式聚餐穩，聊天最順（晚餐台茂）。' },
+      { id: 22, kind: 'lunch', meal: places.paiDaXian, dinner: places.putien, why: '中午鍋物舒服，晚上中式聚餐有面子（台茂）。' },
+      { id: 23, kind: 'lunch', meal: places.youJian, dinner: places.putien, why: '中午先坐著聊，晚上再吃一頓像慶生的（台茂）。' },
+      { id: 24, kind: 'lunch', meal: places.liDuanJin, dinner: places.hanlaiHarbour, why: '晚上自助餐最無腦：有人忌口也不怕（台茂）。' },
+      { id: 25, kind: 'lunch', meal: places.woJia, dinner: places.hanlaiHarbour, why: 'CP 值白天，晚上大場面自助（台茂）。' },
+      { id: 26, kind: 'lunch', meal: places.nankanKitchen, dinner: places.hanlaiVeggie, why: '想吃清爽又有質感：蔬食慶生反而很加分（台茂）。' },
+      { id: 27, kind: 'lunch', meal: places.hanDaShu, dinner: places.jinseSanmai, why: '一路熱鬧到底：氣氛控選這套（台茂）。' },
+      { id: 28, kind: 'lunch', meal: places.yamaokuya, dinner: places.putien, why: '中午質感燒肉，晚上換中式，口味不會膩（台茂）。' },
+      { id: 29, kind: 'lunch', meal: places.shaoHeYuan, dinner: places.jinseSanmai, why: '燒肉 + 聊天熱鬧晚餐（台茂）。' },
+      { id: 30, kind: 'lunch', meal: places.paiDaXian, dinner: places.daMingXing, why: '想走高級火鍋線：中午舒服、晚上高級感（南崁）。' },
+
+      { id: 31, kind: 'tea', meal: places.liminal, dinner: places.putien, why: '甜點拍完照後走中式聚餐，穩又有面子（台茂）。' },
+      { id: 32, kind: 'tea', meal: places.liminal, dinner: places.hanlaiHarbour, why: '甜點主場 + 晚上自助放鬆（台茂）。' },
+      { id: 33, kind: 'tea', meal: places.liminal, dinner: places.hanlaiVeggie, why: '想清爽又有儀式感：蔬食也能很慶生（台茂）。' },
+      { id: 34, kind: 'tea', meal: places.oneCarat, dinner: places.putien, why: '好拍甜點 + 中式聚餐，甜鹹平衡（台茂）。' },
+      { id: 35, kind: 'tea', meal: places.oneCarat, dinner: places.jinseSanmai, why: '甜點先做儀式感，晚餐走熱鬧聊天局（台茂）。' },
+      { id: 36, kind: 'tea', meal: places.liminal, dinner: places.shaoTongZiBade, why: '接送後晚餐在八德：韓式熱鬧、開心收尾。' },
+      { id: 37, kind: 'tea', meal: places.oneCarat, dinner: places.corner17Bade, why: '接送後晚餐在八德：義式慢慢吃，節奏舒服。' },
+      { id: 38, kind: 'tea', meal: places.liminal, dinner: places.corner17Bade, why: '甜點主場 + 八德義式晚餐：不拉車、很順。' },
+      { id: 39, kind: 'tea', meal: places.liminal, dinner: places.jinseSanmai, why: '甜點主場 + 台茂熱鬧晚餐：氣氛控。' },
+      { id: 40, kind: 'tea', meal: places.oneCarat, dinner: places.hanlaiHarbour, why: '甜點主場 + 自助大場面：最不怕意見多（台茂）。' },
     ];
 
     function escapeHtml(s){
