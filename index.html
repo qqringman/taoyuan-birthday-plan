@@ -3,230 +3,115 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>桃園南崁生日行程（多方案分頁）｜給邱小芳</title>
+  <title>桃園南崁生日行程（推薦版）｜給邱小芳</title>
   <style>
     :root{--bg:#0b1020;--card:#121a33;--text:#eaf0ff;--muted:#b9c3e6;--accent:#7aa2ff;--accent2:#7dffcf;--warn:#ffd479;--line:rgba(255,255,255,.12);}*{box-sizing:border-box}
     body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Noto Sans TC",Arial,"PingFang TC","Microsoft JhengHei",sans-serif;
       background:radial-gradient(1200px 600px at 20% 0%, rgba(122,162,255,.25), transparent 60%),radial-gradient(1000px 600px at 80% 10%, rgba(125,255,207,.18), transparent 55%),var(--bg);
       color:var(--text);line-height:1.6;}
     a{color:var(--accent)}
-    .wrap{max-width:1160px;margin:0 auto;padding:28px 18px 70px}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 70px}
     header{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));padding:22px 20px;border-radius:18px;}
     h1{margin:0 0 6px;font-size:26px}
     .sub{color:var(--muted);font-size:14px}
     .pillrow{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
     .pill{font-size:13px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(255,255,255,.03)}
-    .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-top:14px}@media (max-width:980px){.grid{grid-template-columns:1fr}}
-    .card{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:18px;padding:18px;}
+    .card{margin-top:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:18px;padding:18px;}
     h2{margin:0 0 10px;font-size:18px}h3{margin:14px 0 8px;font-size:15px;color:var(--accent2)}
     hr{border:0;border-top:1px solid var(--line);margin:14px 0}
-    .timeline{margin:0;padding:0;list-style:none}.item{padding:12px 0;border-top:1px dashed rgba(255,255,255,.14)}.item:first-child{border-top:0}
-    .time{font-weight:900;font-variant-numeric:tabular-nums}.desc{color:var(--muted);margin-top:4px}
+    .timeline{margin:0;padding:0;list-style:none}
+    .item{padding:12px 0;border-top:1px dashed rgba(255,255,255,.14)}.item:first-child{border-top:0}
+    .time{font-weight:900;font-variant-numeric:tabular-nums}
+    .desc{color:var(--muted);margin-top:4px}
     .tag{display:inline-block;margin-left:8px;font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
-    .ok{border-color:rgba(125,255,207,.4);color:var(--accent2)}.warn{border-color:rgba(255,212,121,.45);color:var(--warn)}
-    .list{margin:8px 0 0;padding-left:18px;color:var(--muted)}
+    .ok{border-color:rgba(125,255,207,.4);color:var(--accent2)}
     .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    button,.btn{appearance:none;border:1px solid var(--line);background:rgba(122,162,255,.16);color:var(--text);padding:10px 12px;border-radius:12px;cursor:pointer;text-decoration:none;display:inline-block}
-    button:hover,.btn:hover{background:rgba(122,162,255,.22)}
-    .ghost{background:rgba(255,255,255,.04)}
-    .note{border-left:3px solid rgba(122,162,255,.7);padding:10px 12px;background:rgba(122,162,255,.08);border-radius:10px;color:var(--muted)}
+    button{appearance:none;border:1px solid var(--line);background:rgba(122,162,255,.16);color:var(--text);padding:10px 12px;border-radius:12px;cursor:pointer}
+    button:hover{background:rgba(122,162,255,.22)}
     .place{padding:12px;border:1px solid var(--line);border-radius:14px;background:rgba(0,0,0,.16);margin-top:10px}
-    .place .name{font-weight:900}.place .meta{color:var(--muted);font-size:13px;margin-top:4px}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.chip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 8px;color:var(--muted)}
-
-    /* tabs (分頁) */
-    .tabs{margin-top:10px}
-    .tabs > input{position:absolute;left:-9999px}
-    .tabbar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 6px}
-    .tabbar label{cursor:pointer;border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--muted);background:rgba(255,255,255,.03);user-select:none}
-    #tA:checked ~ .tabbar label[for="tA"],
-    #tB:checked ~ .tabbar label[for="tB"],
-    #tC:checked ~ .tabbar label[for="tC"],
-    #tD:checked ~ .tabbar label[for="tD"]{color:var(--text);border-color:rgba(122,162,255,.55);background:rgba(122,162,255,.18)}
-    .panel{display:none;border-top:1px solid var(--line);padding-top:12px;margin-top:8px}
-    #tA:checked ~ .panels #pA,
-    #tB:checked ~ .panels #pB,
-    #tC:checked ~ .panels #pC,
-    #tD:checked ~ .panels #pD{display:block}
+    .place .name{font-weight:900}
+    .place .meta{color:var(--muted);font-size:13px;margin-top:4px}
+    .note{border-left:3px solid rgba(122,162,255,.7);padding:10px 12px;background:rgba(122,162,255,.08);border-radius:10px;color:var(--muted)}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <h1>桃園南崁生日行程（多方案分頁）｜給邱小芳</h1>
-      <div class="sub">版本：v1.8｜已依你指示：除了「接送小孩」以外，八德/大溪行程全部拿掉（不在當地吃飯/逛街）｜固定錨點：12:10 接芳芳、13:30 光明國中繳表、16:50（八德大湳）接林品竹、18:00（大溪埔頂）接林伯謙｜主場全部放南崁/台茂</div>
+      <h1>桃園南崁生日行程（推薦版）｜給邱小芳</h1>
+      <div class="sub">版本：v2.0｜依你指示：已把不要的內容全部清掉，只保留「直接照著做」的時間表 + 我推薦的餐廳（不再提八德/大溪）。</div>
       <div class="pillrow">
-        <div class="pill">重點：主慶生放「午餐或下午茶」</div>
-        <div class="pill">多方案：先去光明 vs 先吃飯（你可當天看狀況選）</div>
-        <div class="pill">備案很多：南崁 + 台茂（停車最省腦）</div>
+        <div class="pill">主軸：南崁/台茂</div>
+        <div class="pill">甜點控：下午茶插蠟燭</div>
+        <div class="pill">晚餐：正式慶生</div>
       </div>
       <div class="cta">
         <button onclick="window.print()">列印 / 存成 PDF</button>
-        <a class="btn ghost" href="#places">跳到店家清單</a>
       </div>
     </header>
 
-    <div class="grid">
-      <section class="card">
-        <h2>多方案分頁（四選一）</h2>
-        <div class="note">你說「可以很多分頁」：我用「分頁（Tab）」做成 4 套動線，當天直接選一套走就不會亂。</div>
+    <section class="card">
+      <h2>行程時間表（照表操課）</h2>
+      <ul class="timeline">
+        <li class="item">
+          <div><span class="time">12:10</span> 接到芳芳 <span class="tag ok">開始</span></div>
+          <div class="desc">路上先買飲料/咖啡，心情先顧好。</div>
+        </li>
+        <li class="item">
+          <div><span class="time">12:20–13:20</span> 午餐（簡單吃，但不要委屈）</div>
+          <div class="desc">我建議直接吃：<b>南崁廚房</b>（家常合菜穩、好聊、好停車）。</div>
+        </li>
+        <li class="item">
+          <div><span class="time">13:30–14:00</span> 固定任務（你原本的行程）</div>
+          <div class="desc">（這段你自己照現場狀況處理；本頁不展開地點細節。）</div>
+        </li>
+        <li class="item">
+          <div><span class="time">14:30–16:10</span> 下午茶（主慶生）+ 插蠟燭 <span class="tag ok">甜點主場</span></div>
+          <div class="desc">我建議直接去：<b>閾島 Liminal Space</b>（坐下來慶生、拍照最適合）。</div>
+        </li>
+        <li class="item">
+          <div><span class="time">16:10–16:30</span> 外帶小點心（雞爪/滷味類）</div>
+          <div class="desc">不佔正餐時間：買一袋帶著走，路上想吃就吃。</div>
+        </li>
+        <li class="item">
+          <div><span class="time">19:00–20:30</span> 晚餐（正式慶生） <span class="tag ok">重頭戲</span></div>
+          <div class="desc">我建議直接訂：<b>老乾杯（台茂）</b>（質感最像慶生主場，停車也最省事）。</div>
+        </li>
+        <li class="item">
+          <div><span class="time">20:30±</span> 回家 / 住宿處：加熱蛋糕收尾 <span class="tag ok">ending</span></div>
+          <div class="desc">烤箱/氣炸鍋最佳；微波就短秒數多次。</div>
+        </li>
+      </ul>
 
-        <h3>行程時間表（先給你一張「固定錨點」）</h3>
-        <ul class="timeline">
-          <li class="item"><div><span class="time">12:10</span> 接到芳芳 <span class="tag ok">起點</span></div></li>
-          <li class="item"><div><span class="time">13:30–14:00</span> 光明國中繳表 <span class="tag warn">固定</span></div></li>
-          <li class="item"><div><span class="time">16:50</span> 大成國中（八德大湳）接林品竹 <span class="tag warn">固定</span></div><div class="desc">只做接送：接到就走，不安排八德任何行程。</div></li>
-          <li class="item"><div><span class="time">18:00</span> 仁善國小（大溪埔頂）接林伯謙 <span class="tag warn">固定</span></div><div class="desc">只做接送：接到就走，不安排大溪任何行程。</div></li>
-          <li class="item"><div><span class="time">19:00–20:30</span> 晚餐（主推：台茂/南崁） <span class="tag ok">主場</span></div><div class="desc">接送完直接回「台茂/南崁」吃一餐（停車一次解決，臨時換店也方便）。</div></li>
-          <li class="item"><div><span class="time">20:30±</span> 回家/住宿處：加熱蛋糕收尾 <span class="tag ok">ending</span></div></li>
-        </ul>
+      <hr />
+      <h3>今天你只需要做 3 件事（不會亂）</h3>
+      <ol style="color:var(--muted);padding-left:18px;margin:8px 0 0">
+        <li>午餐去 <b>南崁廚房</b></li>
+        <li>下午茶去 <b>閾島</b>（插蠟燭）</li>
+        <li>晚餐訂 <b>老乾杯（台茂）</b></li>
+      </ol>
+    </section>
 
-        <div class="tabs">
-          <input type="radio" id="tA" name="tab" checked>
-          <input type="radio" id="tB" name="tab">
-          <input type="radio" id="tC" name="tab">
-          <input type="radio" id="tD" name="tab">
+    <section class="card">
+      <h2>我推薦的店（含地圖）</h2>
 
-          <div class="tabbar">
-            <label for="tA">方案 A：先光明 → 再午餐</label>
-            <label for="tB">方案 B：先午餐 → 再光明</label>
-            <label for="tC">方案 C：下午茶主慶生（最穩）</label>
-            <label for="tD">方案 D：晚餐主慶生（接完再吃）</label>
-          </div>
+      <div class="place">
+        <div class="name">午餐｜南崁廚房</div>
+        <div class="meta">家常/合菜｜<a href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E5%B4%81%E5%BB%9A%E6%88%BF+%E6%A1%83%E5%9C%92+%E5%BF%A0%E5%AD%9D%E6%9D%B1%E8%B7%AF30%E8%99%9F" target="_blank" rel="noreferrer">Google Maps</a></div>
+      </div>
 
-          <div class="panels">
-            <div class="panel" id="pA">
-              <h3>方案 A：先光明（不冒風險）→ 午餐 → 下午茶慶生（甜點）→ 接送 → 回台茂晚餐</h3>
-              <ul class="timeline">
-                <li class="item"><div><span class="time">12:10</span> 接到芳芳 <span class="tag ok">起點</span></div><div class="desc">先買飲料/咖啡；這趟會比較長，先把心情顧好。</div></li>
-                <li class="item"><div><span class="time">12:40–13:20</span> 到光明國中附近找停車</div><div class="desc">這樣 13:30 繳表不會緊張。</div></li>
-                <li class="item"><div><span class="time">13:30–14:00</span> 光明國中繳表 <span class="tag warn">固定</span></div></li>
-                <li class="item"><div><span class="time">14:10–15:10</span> 午餐（南崁/台茂周邊） <span class="tag ok">吃飽才有力</span></div><div class="desc">午餐不用太久，留體力給甜點慶生。</div></li>
-                <li class="item"><div><span class="time">15:20–16:20</span> 下午茶（主慶生）+ 插蠟燭 <span class="tag ok">甜點主場</span></div><div class="desc">甜點店坐下來慶生、拍照；外帶 1 份甜點當晚上收尾備案。</div></li>
-                <li class="item"><div><span class="time">16:50</span> 八德大湳：大成國中接林品竹 <span class="tag warn">固定</span></div><div class="desc">只接送，不安排八德任何行程。</div></li>
-                <li class="item"><div><span class="time">18:00</span> 大溪埔頂：仁善國小接林伯謙 <span class="tag warn">固定</span></div><div class="desc">只接送，不安排大溪任何行程。</div></li>
-                <li class="item"><div><span class="time">19:00–20:30</span> 晚餐（回台茂/南崁） <span class="tag ok">主場</span></div><div class="desc">推薦回台茂：停車一次解決，備案多。</div></li>
-                <li class="item"><div><span class="time">20:30±</span> 回家/住宿處：加熱蛋糕收尾 <span class="tag ok">ending</span></div></li>
-              </ul>
-            </div>
+      <div class="place">
+        <div class="name">下午茶｜閾島 Liminal Space（插蠟燭）</div>
+        <div class="meta">甜點/咖啡｜<a href="https://www.google.com/maps/search/?api=1&query=%E9%96%BE%E5%B3%B6+Liminal+Space+%E5%85%89%E6%98%8E%E8%B7%AF%E4%B8%80%E6%AE%B56%E8%99%9F" target="_blank" rel="noreferrer">Google Maps</a></div>
+      </div>
 
-            <div class="panel" id="pB">
-              <h3>方案 B：先午餐（台茂最省腦）→ 再去光明 → 下午茶慶生 → 接送 → 回台茂晚餐</h3>
-              <div class="note">你要求「八德/大溪全部拿掉」：這套就是把吃喝都鎖在 <b>台茂/南崁</b>，接送只當純接送。</div>
-              <ul class="timeline">
-                <li class="item"><div><span class="time">12:10</span> 接到芳芳</div></li>
-                <li class="item"><div><span class="time">12:20–13:05</span> 午餐（台茂/南崁） <span class="tag ok">停車一次</span></div></li>
-                <li class="item"><div><span class="time">13:30–14:00</span> 光明國中繳表 <span class="tag warn">固定</span></div></li>
-                <li class="item"><div><span class="time">14:30–16:10</span> 下午茶（主慶生）+ 插蠟燭 <span class="tag ok">甜點主場</span></div></li>
-                <li class="item"><div><span class="time">16:50</span> 八德大湳：大成國中接林品竹 <span class="tag warn">固定</span></div><div class="desc">只接送，不停留。</div></li>
-                <li class="item"><div><span class="time">18:00</span> 大溪埔頂：仁善國小接林伯謙 <span class="tag warn">固定</span></div><div class="desc">只接送，不停留。</div></li>
-                <li class="item"><div><span class="time">19:00–20:30</span> 晚餐（回台茂/南崁） <span class="tag ok">主場</span></div></li>
-                <li class="item"><div><span class="time">20:30±</span> 回家加熱蛋糕收尾</div></li>
-              </ul>
-            </div>
+      <div class="place">
+        <div class="name">晚餐｜老乾杯（台茂）</div>
+        <div class="meta">頂級燒肉｜<a href="https://maps.google.com/?q=%E8%80%81%E4%B9%BE%E6%9D%AF+%E5%8F%B0%E8%8C%82" target="_blank" rel="noreferrer">Google Maps</a></div>
+      </div>
 
-            <div class="panel" id="pC">
-              <h3>方案 C（主推）：甜點主慶生（全部吃喝都在南崁/台茂）</h3>
-              <div class="note"><b>理念：</b>你要求「八德/大溪行程全部拿掉」→ 那就把慶生主場完全鎖在 <b>南崁/台茂</b>；八德/大溪只做接送。</div>
-              <ul class="timeline">
-                <li class="item"><div><span class="time">12:10</span> 接到芳芳</div></li>
-                <li class="item"><div><span class="time">12:20–13:05</span> 午餐（南崁/台茂）</div></li>
-                <li class="item"><div><span class="time">13:30–14:00</span> 光明國中繳表 <span class="tag warn">固定</span></div></li>
-                <li class="item"><div><span class="time">14:30–16:10</span> 下午茶（主慶生）+ 插蠟燭 <span class="tag ok">主場</span></div><div class="desc">甜點控就讓她在這段開心：插蠟燭、拍照、慢慢聊。</div></li>
-                <li class="item"><div><span class="time">16:50</span> 八德大湳：大成國中接林品竹 <span class="tag warn">固定</span></div><div class="desc">只接送，不安排八德任何行程。</div></li>
-                <li class="item"><div><span class="time">18:00</span> 大溪埔頂：仁善國小接林伯謙 <span class="tag warn">固定</span></div><div class="desc">只接送，不安排大溪任何行程。</div></li>
-                <li class="item"><div><span class="time">19:00–20:30</span> 晚餐（回台茂/南崁） <span class="tag ok">主場</span></div></li>
-                <li class="item"><div><span class="time">20:30±</span> 回家加熱蛋糕收尾</div></li>
-              </ul>
-            </div>
-
-            <div class="panel" id="pD">
-              <h3>方案 D：晚餐主慶生（所有吃喝都在台茂/南崁）</h3>
-              <div class="note">適合：你想把主慶生放晚餐（坐好坐滿）。八德/大溪一樣只做接送，完全不停留。</div>
-              <ul class="timeline">
-                <li class="item"><div><span class="time">12:10</span> 接到芳芳</div></li>
-                <li class="item"><div><span class="time">13:30–14:00</span> 光明國中繳表 <span class="tag warn">固定</span></div></li>
-                <li class="item"><div><span class="time">14:30–15:40</span> 下午茶（先甜一下） <span class="tag ok">甜點控</span></div></li>
-                <li class="item"><div><span class="time">16:50</span> 八德大湳：大成國中接林品竹 <span class="tag warn">固定</span></div><div class="desc">只接送，不安排八德任何行程。</div></li>
-                <li class="item"><div><span class="time">18:00</span> 大溪埔頂：仁善國小接林伯謙 <span class="tag warn">固定</span></div><div class="desc">只接送，不安排大溪任何行程。</div></li>
-                <li class="item"><div><span class="time">19:00–20:30</span> 晚餐（主慶生） <span class="tag ok">重頭戲</span></div><div class="desc">推薦台茂：停車簡單、備案多（臨時改店也不怕）。</div></li>
-                <li class="item"><div><span class="time">20:30±</span> 回家加熱蛋糕收尾</div></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <hr />
-        <h3>固定點（你給的地點我先用地圖搜尋連結）</h3>
-        <ul class="list">
-          <li><b>光明國中</b>（繳表）：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E5%85%89%E6%98%8E%E5%9C%8B%E4%B8%AD+%E6%A1%83%E5%9C%92%E5%B8%82%E8%98%86%E7%AB%B9%E5%8D%80%E5%85%89%E6%98%8E%E8%B7%AF%E4%B8%80%E6%AE%B5123%E8%99%9F">地圖</a></li>
-          <li><b>大成國中</b>（八德大湳）：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%88%90%E5%9C%8B%E4%B8%AD+%E5%85%AB%E5%BE%B7+%E5%A4%A7%E6%B9%B3">地圖</a></li>
-          <li><b>仁善國小</b>（大溪埔頂）：<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E4%BB%81%E5%96%84%E5%9C%8B%E5%B0%8F+%E5%A4%A7%E6%BA%AA+%E5%9F%94%E9%A0%82">地圖</a></li>
-        </ul>
-
-        <hr />
-        <h3>甜點 + 雞爪的安排原則（讓芳芳覺得你懂她）</h3>
-        <ul class="list">
-          <li><b>甜點</b>：主慶生優先放在「下午茶」，店裡插蠟燭 + 拍照；再外帶 1 份當晚上加熱蛋糕的備案。</li>
-          <li><b>雞爪</b>：用「外帶滷味/鹽水雞/雞腳」穿插在接送前後，不要佔掉正餐時間；也可以當車上零食。</li>
-        </ul>
-      </section>
-
-      <aside class="card" id="places">
-        <h2>店家清單（甜點 / 雞爪 / 正餐備案）</h2>
-
-        <h3>甜點（插蠟燭主場）</h3>
-        <div class="place"><div class="name">閾島 Liminal Space（離光明國中近）</div>
-          <div class="meta">光明路一段 6 號｜<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E9%96%BE%E5%B3%B6+Liminal+Space+%E5%85%89%E6%98%8E%E8%B7%AF%E4%B8%80%E6%AE%B56%E8%99%9F">地圖</a></div></div>
-        <div class="place"><div class="name">一克拉的甜點（好拍）</div>
-          <div class="meta">中山路 43 巷 10 號｜<a target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E5%85%8B%E6%8B%89%E7%9A%84%E7%94%9C%E9%BB%9E+%E4%B8%AD%E5%B1%B1%E8%B7%AF43%E5%B7%B710%E8%99%9F">地圖</a></div></div>
-
-        <hr />
-        <h3>雞爪（外帶小確幸｜八德/大溪不安排停留 → 全部改在南崁/台茂解決）</h3>
-        <div class="note">依你最新指示：八德/大溪只做接送、不停留，所以雞爪/滷味改成 <b>南崁/台茂</b> 這邊買最順（停車一次、外帶帶著走）。</div>
-        <ul class="list">
-          <li><b>台茂（最省腦）</b>：直接逛台茂的外帶頁面找滷味/鹽水雞/雞腳類（停車一次解決）→ <a target="_blank" rel="noreferrer" href="https://www2.taimall.com.tw/tmgear2/vTmCRM/TakeOut.aspx">台茂美食外帶</a></li>
-          <li><b>南崁夜市型備案</b>：如果不想進商場，走南崁夜市類型的滷味/鹽水雞攤外帶最彈性（看到就買）。</li>
-        </ul>
-
-        <hr />
-        <h3>晚餐備案（台茂：停車最省腦）</h3>
-        <div class="place"><div class="name">老乾杯（台茂）</div>
-          <div class="meta">頂級燒肉｜<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E8%80%81%E4%B9%BE%E6%9D%AF+%E5%8F%B0%E8%8C%82">地圖</a></div>
-          <div class="chips"><span class="chip">高質感</span><span class="chip">適合慶生</span><span class="chip">台茂停車</span></div></div>
-        <div class="place"><div class="name">阪前鐵板燒（台茂）</div>
-          <div class="meta">鐵板燒｜<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E9%98%AA%E5%89%8D%E9%90%B5%E6%9D%BF%E7%87%92+%E5%8F%B0%E8%8C%82">地圖</a></div>
-          <div class="chips"><span class="chip">儀式感</span><span class="chip">適合兩人</span><span class="chip">台茂停車</span></div></div>
-        <div class="place"><div class="name">島語（台茂）</div>
-          <div class="meta">高端自助｜<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%B3%B6%E8%AA%9E+%E5%8F%B0%E8%8C%82">地圖</a></div>
-          <div class="chips"><span class="chip">多人聚餐</span><span class="chip">選擇多</span><span class="chip">台茂停車</span></div></div>
-        <div class="place"><div class="name">原燒（台茂）</div>
-          <div class="meta">燒肉｜<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%8E%9F%E7%87%92+%E5%8F%B0%E8%8C%82">地圖</a></div>
-          <div class="chips"><span class="chip">好訂位</span><span class="chip">穩</span><span class="chip">台茂停車</span></div></div>
-        <div class="place"><div class="name">海底撈（台茂）</div>
-          <div class="meta">火鍋｜<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E6%B5%B7%E5%BA%95%E6%92%88+%E5%8F%B0%E8%8C%82">地圖</a></div>
-          <div class="chips"><span class="chip">服務型</span><span class="chip">親子友善</span><span class="chip">台茂停車</span></div></div>
-
-        <hr />
-        <h3>其他備案（南崁周邊）</h3>
-        <div class="place"><div class="name">大明星頂流涮涮鍋</div>
-          <div class="meta">南崁路 265 號｜<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%A4%A7%E6%98%8E%E6%98%9F%E9%A0%82%E6%B5%81%E6%B6%AE%E6%B6%AE%E9%8D%8B+%E5%8D%97%E5%B4%81">地圖</a></div>
-          <div class="chips"><span class="chip">儀式感</span><span class="chip">需預約</span></div></div>
-        <div class="place"><div class="name">韓大叔正宗韓式烤肉</div>
-          <div class="meta">南崁路一段 8 號｜<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E9%9F%93%E5%A4%A7%E5%8F%94+%E5%8D%97%E5%B4%81%E8%B7%AF%E4%B8%80%E6%AE%B58%E8%99%9F">地圖</a></div></div>
-        <div class="place"><div class="name">山奧屋無煙燒肉</div>
-          <div class="meta">南崁路一段 7 號｜<a target="_blank" rel="noreferrer" href="https://maps.google.com/?q=%E5%B1%B1%E5%A5%A7%E5%B1%8B+%E5%8D%97%E5%B4%81">地圖</a></div></div>
-
-        <hr />
-        <h3>準備清單</h3>
-        <ul class="list">
-          <li>蠟燭 + 打火機（甜點店插蠟燭用）</li>
-          <li>小卡片（一句話就好）</li>
-          <li>行動電源（一路拍照）</li>
-          <li>加熱蛋糕：烤箱/氣炸鍋最佳；微波短秒數多次</li>
-        </ul>
-      </aside>
-    </div>
+      <hr />
+      <div class="note">如果你要我把「雞爪」也鎖成特定店名：你丟我你們是想在 <b>南崁夜市</b> 買，還是想在 <b>台茂</b> 直接外帶（我再幫你選 1 家寫死）。</div>
+    </section>
   </div>
 </body>
 </html>
