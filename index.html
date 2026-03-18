@@ -36,10 +36,13 @@
 
     /* tabs (分頁) */
     .tabs{margin-top:10px}
-    .tabs input{position:absolute;left:-9999px}
+    .tabs > input{position:absolute;left:-9999px}
     .tabbar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 6px}
     .tabbar label{cursor:pointer;border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--muted);background:rgba(255,255,255,.03);user-select:none}
-    .tabs input:checked + label{color:var(--text);border-color:rgba(122,162,255,.55);background:rgba(122,162,255,.18)}
+    #tA:checked ~ .tabbar label[for="tA"],
+    #tB:checked ~ .tabbar label[for="tB"],
+    #tC:checked ~ .tabbar label[for="tC"],
+    #tD:checked ~ .tabbar label[for="tD"]{color:var(--text);border-color:rgba(122,162,255,.55);background:rgba(122,162,255,.18)}
     .panel{display:none;border-top:1px solid var(--line);padding-top:12px;margin-top:8px}
     #tA:checked ~ .panels #pA,
     #tB:checked ~ .panels #pB,
@@ -51,7 +54,7 @@
   <div class="wrap">
     <header>
       <h1>桃園南崁生日行程（多方案分頁）｜給邱小芳</h1>
-      <div class="sub">版本：v1.6｜你提供的新條件已納入：12:10 接到芳芳、地點：大成國中（八德大湳）/ 仁善國小（大溪埔頂）、喜好：甜點 + 雞爪（已補外帶名單）｜固定任務：13:30 光明國中繳表、16:50 大成國中接林品竹、18:00 仁善接林伯謙</div>
+      <div class="sub">版本：v1.7｜新增「固定錨點時間表」+ 修好分頁點擊（Tab 可切換）｜條件：12:10 接到芳芳、地點：大成國中（八德大湳）/ 仁善國小（大溪埔頂）、喜好：甜點 + 雞爪｜固定任務：13:30 光明國中繳表、16:50 大成國中接林品竹、18:00 仁善接林伯謙</div>
       <div class="pillrow">
         <div class="pill">重點：主慶生放「午餐或下午茶」</div>
         <div class="pill">多方案：先去光明 vs 先吃飯（你可當天看狀況選）</div>
@@ -68,12 +71,26 @@
         <h2>多方案分頁（四選一）</h2>
         <div class="note">你說「可以很多分頁」：我用「分頁（Tab）」做成 4 套動線，當天直接選一套走就不會亂。</div>
 
+        <h3>行程時間表（先給你一張「固定錨點」）</h3>
+        <ul class="timeline">
+          <li class="item"><div><span class="time">12:10</span> 接到芳芳 <span class="tag ok">起點</span></div></li>
+          <li class="item"><div><span class="time">13:30–14:00</span> 光明國中繳表 <span class="tag warn">固定</span></div></li>
+          <li class="item"><div><span class="time">16:50</span> 大成國中（八德大湳）接林品竹 <span class="tag warn">固定</span></div></li>
+          <li class="item"><div><span class="time">18:00</span> 仁善國小（大溪埔頂）接林伯謙 <span class="tag warn">固定</span></div></li>
+          <li class="item"><div><span class="time">20:00±</span> 回家/住宿處：加熱蛋糕收尾 <span class="tag ok">ending</span></div></li>
+        </ul>
+
         <div class="tabs">
+          <input type="radio" id="tA" name="tab" checked>
+          <input type="radio" id="tB" name="tab">
+          <input type="radio" id="tC" name="tab">
+          <input type="radio" id="tD" name="tab">
+
           <div class="tabbar">
-            <input type="radio" id="tA" name="tab" checked><label for="tA">方案 A：先光明 → 再午餐</label>
-            <input type="radio" id="tB" name="tab"><label for="tB">方案 B：先午餐 → 再光明</label>
-            <input type="radio" id="tC" name="tab"><label for="tC">方案 C：下午茶主慶生（最穩）</label>
-            <input type="radio" id="tD" name="tab"><label for="tD">方案 D：晚餐主慶生（接完再吃）</label>
+            <label for="tA">方案 A：先光明 → 再午餐</label>
+            <label for="tB">方案 B：先午餐 → 再光明</label>
+            <label for="tC">方案 C：下午茶主慶生（最穩）</label>
+            <label for="tD">方案 D：晚餐主慶生（接完再吃）</label>
           </div>
 
           <div class="panels">
