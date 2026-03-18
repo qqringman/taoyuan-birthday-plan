@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>桃園生日行程（A方案：青埔一日）｜給邱小芳</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#121a33;
+      --text:#eaf0ff;
+      --muted:#b9c3e6;
+      --accent:#7aa2ff;
+      --accent2:#7dffcf;
+      --warn:#ffd479;
+      --bad:#ff7a7a;
+      --line:rgba(255,255,255,.12);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Noto Sans TC", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(122,162,255,.25), transparent 60%),
+                  radial-gradient(1000px 600px at 80% 10%, rgba(125,255,207,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--accent)}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+    header{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      padding:22px 20px;
+      border-radius:18px;
+    }
+    h1{margin:0 0 6px;font-size:26px;letter-spacing:.2px}
+    .sub{color:var(--muted);font-size:14px}
+    .pillrow{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    .pill{
+      font-size:13px;
+      padding:6px 10px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      background:rgba(255,255,255,.03)
+    }
+    .grid{display:grid;grid-template-columns: 1.15fr .85fr;gap:14px;margin-top:14px}
+    @media (max-width: 860px){.grid{grid-template-columns:1fr}}
+    .card{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:18px;
+      padding:18px;
+    }
+    h2{margin:0 0 10px;font-size:18px}
+    h3{margin:14px 0 8px;font-size:15px;color:var(--accent2)}
+    hr{border:0;border-top:1px solid var(--line);margin:14px 0}
+    .timeline{margin:0;padding:0;list-style:none}
+    .item{padding:12px 0;border-top:1px dashed rgba(255,255,255,.14)}
+    .item:first-child{border-top:0}
+    .time{font-weight:650;font-variant-numeric:tabular-nums}
+    .desc{color:var(--muted);margin-top:4px}
+    .tag{display:inline-block;margin-left:8px;font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+    .ok{border-color:rgba(125,255,207,.4);color:var(--accent2)}
+    .warn{border-color:rgba(255,212,121,.45);color:var(--warn)}
+    .bad{border-color:rgba(255,122,122,.45);color:var(--bad)}
+    .list{margin:8px 0 0;padding-left:18px;color:var(--muted)}
+    .mini{font-size:13px;color:var(--muted)}
+    .kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size:12px; padding:2px 6px; border:1px solid var(--line); border-radius:8px; background:rgba(0,0,0,.22);}
+    .footer{margin-top:14px;color:var(--muted);font-size:12px}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    button{
+      appearance:none;border:1px solid var(--line);background:rgba(122,162,255,.16);
+      color:var(--text);padding:10px 12px;border-radius:12px;cursor:pointer
+    }
+    button:hover{background:rgba(122,162,255,.22)}
+    .ghost{background:rgba(255,255,255,.04)}
+    .note{border-left:3px solid rgba(122,162,255,.7);padding:10px 12px;background:rgba(122,162,255,.08);border-radius:10px;color:var(--muted)}
+    .twoCol{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width: 700px){.twoCol{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>桃園生日行程（A 方案：青埔一日）｜給邱小芳</h1>
+      <div class="sub">版本：v1.0｜建議日期：2026-03-18｜節奏：吃好・好拍照・不趕行程</div>
+      <div class="pillrow">
+        <div class="pill">主場域：青埔／高鐵桃園站周邊</div>
+        <div class="pill">交通：建議開車或計程車／Uber</div>
+        <div class="pill">儀式感：下午茶插蠟燭 + 小卡片</div>
+        <div class="pill">備案：室內行程多，不怕下雨</div>
+      </div>
+      <div class="cta">
+        <button onclick="window.print()">列印 / 存成 PDF</button>
+        <button class="ghost" onclick="document.getElementById('checklist').scrollIntoView({behavior:'smooth'})">跳到準備清單</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>一日時間表（建議）</h2>
+        <ul class="timeline">
+          <li class="item">
+            <div><span class="time">11:30</span> 午餐（主慶生餐） <span class="tag ok">訂位優先</span></div>
+            <div class="desc">挑「環境好拍、服務穩、甜點/生日盤可以加點」的店。若要低風險：選青埔/高鐵周邊。</div>
+          </li>
+          <li class="item">
+            <div><span class="time">13:30</span> 華泰名品城散步逛逛 <span class="tag">輕鬆走走</span></div>
+            <div class="desc">逛街 + 拍照 + 買小禮物（香氛/口紅/小包）。把「生日禮物」安排在這段最自然。</div>
+          </li>
+          <li class="item">
+            <div><span class="time">15:30</span> 下午茶 & 蛋糕時間 <span class="tag ok">儀式感</span></div>
+            <div class="desc">重點：找一間採光好/座位舒服的咖啡店。此段建議你準備：蠟燭 + 打火機 + 小卡片。</div>
+          </li>
+          <li class="item">
+            <div><span class="time">17:30</span> 休息/散步/回飯店或回家放東西 <span class="tag warn">保留彈性</span></div>
+            <div class="desc">避免晚餐前太趕。這段可依天氣調整：室內逛街續攤 or 戶外散步。</div>
+          </li>
+          <li class="item">
+            <div><span class="time">18:30</span> 晚餐（可選：吃輕一點） <span class="tag">第二餐</span></div>
+            <div class="desc">如果午餐已經吃很滿：晚餐改成火鍋/小酒館/居酒屋的「輕鬆聊天」風格。</div>
+          </li>
+          <li class="item">
+            <div><span class="time">20:00</span> 收尾：夜景/小酒吧/回家暖蛋糕 <span class="tag ok">最甜收尾</span></div>
+            <div class="desc">如果你要「加熱蛋糕」：建議放在最後，回家或到住宿處用烤箱/氣炸鍋/微波完成，收尾會很有記憶點。</div>
+          </li>
+        </ul>
+
+        <hr />
+        <h3>今日成功關鍵（很實用）</h3>
+        <ul class="list">
+          <li>主慶生只要抓好兩個點：<b>一餐 + 一次蛋糕儀式</b>；其餘留彈性。</li>
+          <li>照片好看靠兩件事：<b>採光</b>（下午茶）+ <b>乾淨背景</b>（outlet/咖啡廳）。</li>
+          <li>最怕翻車的是「等位/客滿」：午餐、下午茶請至少其中一個<b>先訂位</b>。</li>
+        </ul>
+      </section>
+
+      <aside class="card">
+        <h2 id="checklist">準備清單（含加熱蛋糕）</h2>
+
+        <h3>生日小物（建議你帶著）</h3>
+        <ul class="list">
+          <li>蠟燭 + 打火機（或點火器）</li>
+          <li>小卡片（寫一句重點就好）</li>
+          <li>行動電源</li>
+          <li>濕紙巾/面紙</li>
+        </ul>
+
+        <h3>加熱蛋糕：怎麼買/怎麼安排</h3>
+        <div class="note">
+          你說要買「加熱蛋糕」，我把它當成「<b>回家/到住宿處加熱後更好吃</b>」的蛋糕類型（例如熔岩蛋糕、布朗尼、磅蛋糕、可回烤的巴斯克等）。
+        </div>
+        <ul class="list">
+          <li><b>優先挑選</b>：可常溫短暫攜帶、加熱後口感會提升的品項（布朗尼/磅蛋糕/熔岩蛋糕）。</li>
+          <li><b>加熱設備</b>：有烤箱/氣炸鍋最好；只有微波也可以（但要注意時間，避免過乾）。</li>
+          <li><b>時間點</b>：建議晚餐後 20:00 收尾再加熱，儀式感最強。</li>
+          <li><b>備案</b>：如果當天太趕，改成下午茶店內蛋糕插蠟燭；加熱蛋糕留作「隔天早餐驚喜」。</li>
+        </ul>
+
+        <h3>我需要你補兩個資訊（才能把地點寫死）</h3>
+        <ul class="list">
+          <li>你們出發地：桃園市區 / 中壢 / 青埔 / 台北？</li>
+          <li>偏好料理：日料 / 牛排 / 燒肉 / 義法 / 火鍋？（有沒有不吃的？）</li>
+        </ul>
+
+        <hr />
+        <h3>備忘（不想踩雷就照做）</h3>
+        <ul class="list">
+          <li>午餐和下午茶：至少訂一個。另一個就現場排隊當作散步。</li>
+          <li>禮物不求貴：<b>香氛/護手霜/小飾品 + 卡片</b>勝率最高。</li>
+          <li>如果下雨：outlet + 咖啡廳 + 室內晚餐，一樣很完整。</li>
+        </ul>
+
+        <div class="footer">
+          這頁是「可直接丟給對方」的版本。你回我出發地 + 料理偏好後，我可以把餐廳/甜點店候選（2-3 間）補上，變成可照著走的終版。
+        </div>
+      </aside>
+    </div>
+
+    <section class="card" style="margin-top:14px">
+      <h2>（可選）你要我把這頁變成「可點地圖/一鍵導航」嗎？</h2>
+      <div class="twoCol">
+        <div class="note">
+          你回我：<br/>
+          1) 出發地（大概區域就好）<br/>
+          2) 午餐想吃哪一類（例如：日料/牛排/燒肉）<br/>
+          3) 甜點偏好（巴斯克/千層/戚風/熔岩）<br/>
+          我就能把店家寫成 Google Maps 連結，並安排最短移動路線。
+        </div>
+        <div class="mini">
+          小提醒：如果你今晚就要出發，請先決定「午餐主慶生」或「晚餐主慶生」。
+          <br/>不想想太多就選：<span class="kbd">午餐主慶生 + 下午茶插蠟燭 + 晚上加熱蛋糕收尾</span>。
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
